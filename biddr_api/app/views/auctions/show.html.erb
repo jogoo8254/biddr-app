@@ -1,13 +1,12 @@
 <h3><%= @auction.title %></h3>
-<p><%= @auction.body %></p>
-<div>
-  <small>
-    Asked <%= time_ago_in_words(@auction.created_at)  %> ago
-  </small>
-</div>
+<p>
+    <%= @auction.description %> <br />
+    Current Price: <%= @auction.reserve_price %> <br />
+    Ends at: <%= time_ago_in_words(@auction.ends_at) %> <br />
+    Reserve Price not met <br/>
+</p>
 
 <section>
-  <h1>Bids</h1>
   <%= form_with(model: [@auction, @bid], local: true) do |f| %>
     <% if @bid.errors.present? %>
       <p class="form-errors">
@@ -15,24 +14,18 @@
       </p>
     <% end %>
     <div class="form-group">
-      <%= f.text_area(
-      :body, cols: 50, rows: 5,
-      placeholder: "What are your bids...",
-      class: "form-control"
-      ) %>
+      <%= form.label :price %>
+      <%= f.number_field :price %>
     </div>
     <%= f.submit "Bid" %>
   <% end %>
-
+  <h3><u>Previous Bids</u></h3>
   <hr />
     <ul class="bid-list">
       <% @bids.each do |bid| %>
         <li>
           <p>
-          <%= bid.body %> <br />
-          <small>
-            Bided <%= time_ago_in_words(bid.created_at) %> ago
-          </small>
+           $<%= bid.price %> on <%= time_ago_in_words(bid.created_at) %> <br />
         </p>
         </li>
       <% end %>

@@ -1,7 +1,7 @@
 class CreateBids < ActiveRecord::Migration[5.2]
   def change
     create_table :bids do |t|
-      t.text :body
+      t.integer :price
       t.references :auction, foreign_key: true
       t.timestamps
     end

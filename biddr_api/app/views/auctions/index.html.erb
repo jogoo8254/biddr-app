@@ -4,7 +4,7 @@
     <li>
       <%= link_to(auction.title, auction_path(auction)) %> <br />
       <small>
-        Posted <%= time_ago_in_words(auction.created_at)  %> ago
+        Posted on <%= time_ago_in_words(auction.created_at)  %> ago
       </small>
     </li>
   <% end %>
