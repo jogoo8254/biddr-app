@@ -1,0 +1,18 @@
+<%= form_with(model: @auction, local: true) do |form| %>
+
+   <% if @auction.errors.present? %>
+    <p class="form-errors">
+      <%= @auction.errors.full_messages.join(", ") %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+   <%= form.submit %>
+<% end %>

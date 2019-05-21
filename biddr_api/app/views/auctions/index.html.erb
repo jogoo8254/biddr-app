@@ -1,2 +1,11 @@
-<h1>Auctions#index</h1>
-<p>Find me in app/views/auctions/index.html.erb</p>
+<h1>Auctions</h1>
+ <ul class="auction-list">
+  <% @auctions.each do |auction| %>
+    <li>
+      <%= link_to(auction.title, auction_path(auction)) %> <br />
+      <small>
+        Posted <%= time_ago_in_words(auction.created_at)  %> ago
+      </small>
+    </li>
+  <% end %>
+</ul>
