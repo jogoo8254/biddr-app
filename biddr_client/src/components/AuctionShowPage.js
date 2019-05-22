@@ -32,15 +32,6 @@ export class AuctionShowPage extends Component {
       <main className="Page">
         <AuctionDetails {...this.state.auction} />
         <div>
-          <PrimaryButton
-            text="Edit"
-            iconProps={{ iconName: "edit" }}
-            onClick={() =>
-              this.props.history.push(
-                `/auctions/${this.state.auction.id}/edit`
-              )
-            }
-          />
         </div>
         <h2>Bids</h2>
         <BidList

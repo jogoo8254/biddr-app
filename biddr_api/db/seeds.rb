@@ -4,9 +4,9 @@ Auction.delete_all
 User.delete_all
 
 super_user = User.create(
-    first_name: "Qwerty",
-    last_name: "Jones",
-    email: "qj@keyboard.meh",
+    first_name: "Jon",
+    last_name: "Snow",
+    email: "js@winterfell.gov",
     password: PASSWORD
   )
 
@@ -35,7 +35,7 @@ super_user = User.create(
     )
     if q.valid?
         q.bids = rand(0..15).times.map do
-          Bid.new(price: Faker::GreekPhilosophers.quote, user: users.sample)
+          Bid.new(price: rand(100_000), user: users.sample)
         end    
       end
     end

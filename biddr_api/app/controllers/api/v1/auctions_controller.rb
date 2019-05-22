@@ -18,7 +18,7 @@ class Api::V1::AuctionsController < ApplicationController
     def show
         render(
           json: @auction,
-          # include: [ :author, {bids: [ :author ]} ]
+          include: [ :author, {bids: [ :author ]} ]
         )
       end
       def index

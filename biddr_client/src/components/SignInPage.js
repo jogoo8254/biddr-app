@@ -11,15 +11,15 @@ import { Session } from '../api/session';
       email: fD.get('email'),
       password: fD.get('password'),
     };
-    Session.create(signInParams).then(() => {
-      onSignIn();
-      // Once we are successfully signed in, and the app has a user in our state
-      // navigate to '/auctions'
-      props.history.push('/auctions');
+    Session.create(signInParams).then(response => {
+      if (response.id) {
+        onSignIn();
+        props.history.push('/auctions');
+      }
     });
   }
   return (
-    <main>
+    <main className="Page">
       <h1>Sign In</h1>
       <form onSubmit={handleSubmit}>
         <div>

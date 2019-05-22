@@ -7,6 +7,7 @@ export const Session = {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(params),
     }).then((res) => res.json());
