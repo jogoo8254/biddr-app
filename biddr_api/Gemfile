@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 gem 'cowsay'
 gem 'faker'
+gem 'active_model_serializers'
+gem 'rack-cors'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

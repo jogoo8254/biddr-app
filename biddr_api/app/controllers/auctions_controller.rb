@@ -18,10 +18,13 @@ class AuctionsController < ApplicationController
   end
 
   def show
-    # @auction = Auction.find(params[:id])
     @bid = Bid.new
-    # For the list of bids
     @bids = @auction.bids.order(created_at: :desc)
+
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @auction }
+    end
   end
 
   def index

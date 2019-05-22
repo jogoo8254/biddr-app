@@ -44,7 +44,7 @@ export class AuctionShowPage extends Component {
         </div>
         <h2>Bids</h2>
         <BidList
-          answers={this.state.auction.answers}
+          bids={this.state.auction.bids}
         />
       </main>
     );

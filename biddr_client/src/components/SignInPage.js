@@ -14,8 +14,8 @@ import { Session } from '../api/session';
     Session.create(signInParams).then(() => {
       onSignIn();
       // Once we are successfully signed in, and the app has a user in our state
-      // navigate to '/questions'
-      props.history.push('/questions');
+      // navigate to '/auctions'
+      props.history.push('/auctions');
     });
   }
   return (

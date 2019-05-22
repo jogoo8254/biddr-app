@@ -25,7 +25,7 @@ export const AuctionForm = props => {
         <input name="title" id="title" defaultValue={data.title} />
       </div>
       <div>
-        <label htmlFor="description">Body</label> <br />
+        <label htmlFor="description">Description</label> <br />
         <FormErrors forField="description" errors={errors} />
         <textarea
           name="description"
